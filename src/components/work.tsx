@@ -2,7 +2,6 @@ import { ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,

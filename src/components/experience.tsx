@@ -58,8 +58,8 @@ export default function Experience() {
       className="sm:w-screen sm:h-screen flex justify-center items-center"
     >
       <div className="flex-col flex gap-6 sm:gap-10">
-        <h2 className="text-3xl text-primary-foreground">
-          <span className="text-accent-foreground text-xl !font-mono mr-4">
+        <h2 className="text-3xl text-primary-foreground !font-mono">
+          <span className="text-accent-foreground text-xl mr-4">
             02.
           </span>
           My recent experiences

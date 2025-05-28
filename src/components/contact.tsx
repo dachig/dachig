@@ -37,10 +37,8 @@ export default function Contact() {
       className="sm:w-screen sm:h-screen flex justify-center items-center"
     >
       <div className="flex-col flex gap-6 sm:gap-10 w-full sm:w-fit">
-        <h2 className="text-3xl text-primary-foreground">
-          <span className="text-accent-foreground text-xl !font-mono mr-4">
-            04.
-          </span>
+        <h2 className="text-3xl text-primary-foreground !font-mono">
+          <span className="text-accent-foreground text-xl mr-4">04.</span>
           Contact me
         </h2>
         <form onSubmit={handleSubmit} className="space-y-4 sm:w-2xl ">

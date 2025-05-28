@@ -58,10 +58,8 @@ export default function Work() {
       className="sm:w-screen sm:h-screen flex justify-center items-center"
     >
       <div className="flex-col flex gap-6 sm:gap-10">
-        <h2 className="text-3xl text-primary-foreground">
-          <span className="text-accent-foreground text-xl !font-mono mr-4">
-            03.
-          </span>
+        <h2 className="text-3xl text-primary-foreground !font-mono">
+          <span className="text-accent-foreground text-xl mr-4">03.</span>
           Work that I&apos;m proud of
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

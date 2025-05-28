@@ -85,7 +85,7 @@ export default function Work() {
               <CardFooter className="flex gap-2">
                 {work.repo && (
                   <a href={work.repo} target="_blank">
-                    <Button className="text-xs active:scale-[.97] flex gap-2 items-center">
+                    <Button className="text-sm active:scale-[.97] flex gap-2 items-center">
                       <ExternalLink size={16} />
                       Repository
                     </Button>
@@ -93,7 +93,7 @@ export default function Work() {
                 )}
                 {work.demo && (
                   <a href={work.demo} target="_blank">
-                    <Button className="text-xs active:scale-[.97] flex gap-2 items-center">
+                    <Button className="text-sm active:scale-[.97] flex gap-2 items-center">
                       <ExternalLink size={16} />
                       Demo
                     </Button>

@@ -36,17 +36,14 @@ export default function Contact() {
       id="contact"
       className="sm:w-screen sm:h-screen flex justify-center items-center"
     >
-      <div className="flex-col flex gap-6 sm:gap-10">
+      <div className="flex-col flex gap-6 sm:gap-10 w-full sm:w-fit">
         <h2 className="text-3xl text-primary-foreground">
           <span className="text-accent-foreground text-xl !font-mono mr-4">
             04.
           </span>
           Contact me
         </h2>
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-4 w-full sm:w-2xl "
-        >
+        <form onSubmit={handleSubmit} className="space-y-4 sm:w-2xl ">
           <label className="block">
             <span className="text-accent-foreground !font-mono">
               Your Email

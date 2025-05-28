@@ -1,0 +1,136 @@
+"use client";
+import { cn } from "@/lib/utils";
+import { ChevronRight, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { Button } from "./ui/button";
+
+interface ExperiencesProps {
+  title: string;
+  location?: string | undefined;
+  function: string;
+  duration: string;
+  summary: string[];
+  blog?: string;
+}
+
+const experiences: ExperiencesProps[] = [
+  {
+    title: "Freelancer",
+    location: undefined,
+    function: "Freelance Fullstack Developer",
+    duration: "June 2025 - Present",
+    summary: [
+      "Write modern, performant, maintainable code for a diverse array of client and personal projects.",
+      "Work with a variety of different languages, frameworks and content management systems such as JavaScript, TypeScript, React and GraphQL.",
+      "Clear communication with clients to ensure customer satisfaction.",
+    ],
+  },
+  {
+    title: "Twintag",
+    location: "Twintag",
+    function: "Intern Fullstack Developer",
+    duration: "Feb 2025 - June 2025",
+    summary: [
+      "Collaborated on the development of the internal admin portal and AI-driven client projects.",
+      "Executed both frontend (React, Angular) and backend (Golang, GraphQL) tasks with a strong focus on usability and efficiency.",
+      "Participated in daily stand-ups and Scrum ceremonies.",
+    ],
+    blog: "https://twintagblog.vercel.app/",
+  },
+  {
+    title: "Meteor",
+    location: "Meteor",
+    function: "Intern Frontend Developer",
+    duration: "Feb 2024 - June 2024",
+    summary: [
+      "Conducted research into Progressive Web Apps (PWAs) using Shopify Hydrogen (Headless React) to improve internal workflows.",
+      "Worked on client projects, primarily on frontend development with occasional backend tasks and direct client communication.",
+      "Participated in daily stand-ups and Scrum ceremonies.",
+    ],
+  },
+];
+
+export default function Experience() {
+  const [activeExperience, setActiveExperience] = useState(experiences[0]);
+  return (
+    <div
+      id="experience"
+      className="sm:w-screen sm:h-screen flex justify-center items-center"
+    >
+      <div className="flex-col flex gap-6 sm:gap-10">
+        <h2 className="text-3xl text-primary-foreground">
+          <span className="text-accent-foreground text-xl !font-mono mr-4">
+            02.
+          </span>
+          My recent experiences
+        </h2>
+        <div className="flex flex-col sm:flex-row gap-8">
+          <div className="flex flex-row sm:flex-col">
+            {experiences.map((experience, idx) => (
+              <div
+                onClick={() => setActiveExperience(experience)}
+                key={idx}
+                className="flex flex-col sm:flex-row gap-4 items-center font-mono hover:cursor-pointer sm:flex-0 flex-1"
+              >
+                <span
+                  className={cn(
+                    activeExperience === experience
+                      ? "border-accent-foreground"
+                      : "border-secondary-foreground",
+                    `border-b sm:border-r border-[1.5px] w-full sm:h-10 sm:w-0`
+                  )}
+                ></span>
+                <div
+                  className={cn(
+                    activeExperience === experience
+                      ? "text-accent-foreground"
+                      : "text-secondary-foreground",
+                    `active:scale-[.97]`
+                  )}
+                >
+                  {experience.title}
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="flex flex-col mt-2">
+            <h3 className="text-primary-foreground">
+              {activeExperience.function}{" "}
+              {activeExperience.location && (
+                <span className="text-accent-foreground !font-mono ml-2">{`@${activeExperience.location}`}</span>
+              )}
+            </h3>
+            <span className="text-secondary-foreground text-sm !font-mono">
+              {activeExperience.duration}
+            </span>
+            <div className="flex flex-col gap-3 mt-4">
+              {activeExperience.summary.map((bullet, idx) => (
+                <span
+                  className="text-secondary-foreground flex items-center gap-4 max-w-[500px]"
+                  key={idx}
+                >
+                  <span className="text-accent-foreground">
+                    <ChevronRight size={16} />
+                  </span>
+                  {bullet}
+                </span>
+              ))}
+            </div>
+            {activeExperience.blog && (
+              <a
+                className="text-accent-foreground !font-mono flex gap-2 items-center mt-4"
+                href={activeExperience.blog}
+                target="_blank"
+              >
+                <Button>
+                  <ExternalLink size={16} />
+                  {activeExperience.title} Blog
+                </Button>
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

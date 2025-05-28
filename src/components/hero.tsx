@@ -23,8 +23,8 @@ export default function Hero() {
             standard.
           </span>
           <span className=" text-secondary-foreground max-w-[500px]">
-            Why choose me? I will help to kickstart and elevate your
-            brand&apos;s online presence from the ground up.
+            Let me help you kickstart and elevate your brand&apos;s online
+            presence!
           </span>
           <a href="#contact" className="w-fit">
             <Button>Let&apos;s get in touch!</Button>

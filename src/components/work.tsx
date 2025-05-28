@@ -16,6 +16,7 @@ interface WorkProps {
   image?: string | undefined;
   repo: string;
   demo: string;
+  tech: string[];
 }
 const workArray: WorkProps[] = [
   {
@@ -24,6 +25,7 @@ const workArray: WorkProps[] = [
     image: "/3D_PORTFOLIO.png",
     repo: "https://github.com/dachig/threejs-journey/tree/main/my-3d-portfolio",
     demo: "https://www.dachig.com/",
+    tech: ["R3F", "React", "Framer-Motion"],
   },
   {
     title: "Crypto Hippo (Database Deprecated)",
@@ -32,6 +34,7 @@ const workArray: WorkProps[] = [
     image: "/crypto-hippo.png",
     repo: "https://github.com/dachig/CryptoHippo",
     demo: "https://crypto-hippo.vercel.app/",
+    tech: ["React", "Supabase", "Next-Auth", "Crypto API"],
   },
   {
     title: "Github API",
@@ -40,6 +43,7 @@ const workArray: WorkProps[] = [
     image: "/github-api.png",
     repo: "https://github.com/dachig/GithubAPI",
     demo: "https://github-api-omega-lime.vercel.app/",
+    tech: ["React", "Github API", "Zod"],
   },
   {
     title: "Marbles Race",
@@ -48,6 +52,7 @@ const workArray: WorkProps[] = [
     image: "/marbles-race-screen.png",
     repo: "https://github.com/dachig/threejs-journey/tree/main/66-create-a-game-with-r3f",
     demo: "https://marblesrace.vercel.app/",
+    tech: ["R3F", "Three.JS", "JavaScript"],
   },
 ];
 
@@ -70,6 +75,16 @@ export default function Work() {
                   {work.title}
                 </CardTitle>
                 <CardDescription>{work.description}</CardDescription>
+                <div className="flex gap-2 flex-wrap mt-2">
+                  {work.tech.map((tech, idx) => (
+                    <span
+                      className="text-xs px-2 rounded-md text-accent-foreground border-[1.5px] border-accent-foreground !font-mono"
+                      key={idx}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </CardHeader>
               <CardContent className="mt-auto">
                 {work.image && (
@@ -78,7 +93,7 @@ export default function Work() {
                     alt={work.title}
                     width={200}
                     height={200}
-                    className="w-full"
+                    className="w-full rounded-md"
                   />
                 )}
               </CardContent>

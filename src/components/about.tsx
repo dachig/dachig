@@ -33,12 +33,11 @@ export default function About() {
               height={350}
               className="h-full w-full absolute right-4 bottom-4 rounded-md"
             />
-            <div className="h-full w-full absolute right-4 bottom-4 rounded-md bg-accent-foreground/30" />
+            <div className="h-full w-full absolute right-4 bottom-4 rounded-md bg-accent-foreground/25" />
           </div>
           <div className="flex flex-col gap-4 max-w-[500px] text-secondary-foreground">
             <span>
-              Hi! My name is Dachi and I enjoy creating things that live on the
-              internet. My interest in web development started back in 2022,
+              My interest in web development started back in 2022,
               just before COVID ended. Who knew having a lot of spare time at
               home could spark an interest in HTML & CSS!
             </span>

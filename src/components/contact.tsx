@@ -51,7 +51,7 @@ export default function Contact() {
               value={form.from}
               onChange={(e) => setForm((f) => ({ ...f, from: e.target.value }))}
               required
-              className="w-full border px-2 py-1 rounded-md text-primary-foreground"
+              className="w-full border px-2 py-1 rounded-md text-secondary-foreground mt-2"
             />
           </label>
 
@@ -64,7 +64,7 @@ export default function Contact() {
                 setForm((f) => ({ ...f, subject: e.target.value }))
               }
               required
-              className="w-full border px-2 py-1 rounded-md text-primary-foreground"
+              className="w-full border px-2 py-1 rounded-md text-secondary-foreground mt-2"
             />
           </label>
 
@@ -78,7 +78,7 @@ export default function Contact() {
               rows={6}
               minLength={25}
               required
-              className="w-full border px-2 py-1 rounded-md text-primary-foreground"
+              className="w-full border px-2 py-1 rounded-md text-secondary-foreground mt-2"
             />
           </label>
 

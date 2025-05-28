@@ -31,10 +31,12 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
     // Zod validation errors
     if (err.name === "ZodError") {
       return NextResponse.json(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         { success: false, errors: err.errors.map((e: any) => e.message) },
         { status: 400 }
       );

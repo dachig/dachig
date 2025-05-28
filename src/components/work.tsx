@@ -69,53 +69,57 @@ export default function Work() {
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {workArray.map((work, idx) => (
-            <Card key={idx} className="hover:border-accent-foreground">
-              <CardHeader>
-                <CardTitle className="text-primary-foreground !font-mono">
-                  {work.title}
-                </CardTitle>
-                <CardDescription>{work.description}</CardDescription>
-                <div className="flex gap-2 flex-wrap mt-2">
-                  {work.tech.map((tech, idx) => (
-                    <span
-                      className="text-xs px-2 rounded-md text-accent-foreground border-[1.5px] border-accent-foreground !font-mono"
-                      key={idx}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </CardHeader>
-              <CardContent className="mt-auto">
-                {work.image && (
-                  <Image
-                    src={work.image}
-                    alt={work.title}
-                    width={200}
-                    height={200}
-                    className="w-full rounded-md"
-                  />
-                )}
-              </CardContent>
-              <CardFooter className="flex gap-2">
-                {work.repo && (
-                  <a href={work.repo} target="_blank">
-                    <Button className="text-sm active:scale-[.97] flex gap-2 items-center">
-                      <ExternalLink size={16} />
-                      Repository
-                    </Button>
-                  </a>
-                )}
-                {work.demo && (
-                  <a href={work.demo} target="_blank">
-                    <Button className="text-sm active:scale-[.97] flex gap-2 items-center">
-                      <ExternalLink size={16} />
-                      Demo
-                    </Button>
-                  </a>
-                )}
-              </CardFooter>
-            </Card>
+            <div key={idx}>
+              {work.image && (
+                <Image
+                  src={work.image}
+                  alt={work.title}
+                  width={200}
+                  height={200}
+                  className="w-full rounded-md rounded-b-none"
+                />
+              )}
+              <Card
+                key={idx}
+                className="hover:border-accent-foreground min-h-[250px]"
+              >
+                <CardHeader>
+                  <CardTitle className="text-primary-foreground !font-mono">
+                    {work.title}
+                  </CardTitle>
+                  <div className="flex gap-2 flex-wrap mt-2">
+                    {work.tech.map((tech, idx) => (
+                      <span
+                        className="text-xs px-2 rounded-md text-accent-foreground border-[1.5px] border-accent-foreground !font-mono"
+                        key={idx}
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <CardDescription>{work.description}</CardDescription>
+                </CardHeader>
+                {/* <CardContent className="mt-auto"></CardContent> */}
+                <CardFooter className="flex gap-2 mt-auto">
+                  {work.repo && (
+                    <a href={work.repo} target="_blank">
+                      <Button className="text-sm active:scale-[.97] flex gap-2 items-center">
+                        <ExternalLink size={16} />
+                        Repository
+                      </Button>
+                    </a>
+                  )}
+                  {work.demo && (
+                    <a href={work.demo} target="_blank">
+                      <Button className="text-sm active:scale-[.97] flex gap-2 items-center">
+                        <ExternalLink size={16} />
+                        Demo
+                      </Button>
+                    </a>
+                  )}
+                </CardFooter>
+              </Card>
+            </div>
           ))}
         </div>
       </div>

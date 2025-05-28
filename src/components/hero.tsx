@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 export default function Hero() {
   return (
-    <div className="sm:w-screen h-screen flex justify-center items-center">
+    <div className="lg:w-screen h-screen flex justify-center items-center">
       <div className="flex items-center justify-center">
         <div className="flex flex-col gap-4">
           <span className="!font-mono text-accent-foreground">

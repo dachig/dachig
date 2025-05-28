@@ -55,29 +55,29 @@ export default function Experience() {
   return (
     <div
       id="experience"
-      className="sm:w-screen sm:h-screen flex justify-center items-center"
+      className="lg:w-screen lg:h-screen flex justify-center items-center"
     >
-      <div className="flex-col flex gap-6 sm:gap-10">
+      <div className="flex-col flex gap-6 lg:gap-10">
         <h2 className="text-3xl text-primary-foreground !font-mono">
           <span className="text-accent-foreground text-xl mr-4">
             02.
           </span>
           My recent experiences
         </h2>
-        <div className="flex flex-col sm:flex-row gap-8">
-          <div className="flex flex-row sm:flex-col">
+        <div className="flex flex-col lg:flex-row gap-8">
+          <div className="flex flex-row lg:flex-col">
             {experiences.map((experience, idx) => (
               <div
                 onClick={() => setActiveExperience(experience)}
                 key={idx}
-                className="flex flex-col sm:flex-row gap-4 items-center font-mono hover:cursor-pointer sm:flex-0 flex-1"
+                className="flex flex-col lg:flex-row gap-4 items-center font-mono hover:cursor-pointer lg:flex-0 flex-1"
               >
                 <span
                   className={cn(
                     activeExperience === experience
                       ? "border-accent-foreground"
                       : "border-secondary-foreground",
-                    `border-b sm:border-r border-[1.5px] w-full sm:h-10 sm:w-0`
+                    `border-b lg:border-r border-[1.5px] w-full lg:h-10 lg:w-0`
                   )}
                 ></span>
                 <div

@@ -16,16 +16,16 @@ export default function About() {
   return (
     <div
       id="about"
-      className="sm:w-screen sm:h-screen flex justify-center items-center"
+      className="lg:w-screen lg:h-screen flex justify-center items-center"
     >
-      <div className="flex-col flex gap-6 sm:gap-10">
+      <div className="flex-col flex gap-6 lg:gap-10">
         <h2 className="text-3xl text-primary-foreground !font-mono">
           <span className="text-accent-foreground text-xl mr-4">01.</span>
           About me
         </h2>
 
-        <div className="flex flex-col sm:flex-row gap-6 sm:gap-12">
-          <div className="border-2 border-accent-foreground w-[250px] h-[290px] sm:w-[300px] sm:h-[350px] rounded-md bg-card block self-center relative">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
+          <div className="border-2 border-accent-foreground w-[250px] h-[290px] lg:w-[300px] lg:h-[350px] rounded-md bg-card block self-center relative">
             <Image
               src={"/pc_foto.jpg"}
               alt="portrait"

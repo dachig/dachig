@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export default function Navigation() {
   return (
-    <ul className="list-none sm:flex font-mono items-center p-4 gap-8 text-secondary-foreground justify-end absolute top-4 right-4 hidden">
+    <ul className="list-none lg:flex font-mono items-center p-4 gap-8 text-secondary-foreground justify-end absolute top-4 right-4 hidden">
       <li>
         <a href="#about">
           <span className="text-accent-foreground ">01.</span> About

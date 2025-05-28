@@ -7,7 +7,7 @@ import Work from "@/components/work";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden flex flex-col sm:block gap-16 sm:gap-0">
+    <div className="overflow-x-hidden flex flex-col lg:block gap-16 lg:gap-0">
       <Navigation />
       <Hero />
       <About />

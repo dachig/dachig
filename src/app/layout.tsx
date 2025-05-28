@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <Analytics />
       <body
-        className={`--font-sans bg-radial from-card to-background p-4 sm:p-0`}
+        className={`--font-sans bg-radial from-card to-background p-4 lg:p-0`}
       >
         {children}
       </body>

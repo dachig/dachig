@@ -34,14 +34,14 @@ export default function Contact() {
   return (
     <div
       id="contact"
-      className="sm:w-screen sm:h-screen flex justify-center items-center"
+      className="lg:w-screen lg:h-screen flex justify-center items-center"
     >
-      <div className="flex-col flex gap-6 sm:gap-10 w-full sm:w-fit">
+      <div className="flex-col flex gap-6 lg:gap-10 w-full lg:w-fit">
         <h2 className="text-3xl text-primary-foreground !font-mono">
           <span className="text-accent-foreground text-xl mr-4">04.</span>
           Contact me
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-4 sm:w-2xl ">
+        <form onSubmit={handleSubmit} className="space-y-4 lg:w-2xl ">
           <label className="block">
             <span className="text-accent-foreground !font-mono">
               Your Email

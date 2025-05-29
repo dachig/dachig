@@ -25,7 +25,7 @@ export default function Navigation() {
           </a>
         </li>
         <li>
-          <a href="/Dachi_Giorgobiani_CV.pdf" target="_blank">
+          <a href="/dachi-giorgobiani-cv.pdf" target="_blank">
             <Button>Download CV</Button>
           </a>
         </li>

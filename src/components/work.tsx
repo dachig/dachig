@@ -24,7 +24,7 @@ const workArray: WorkProps[] = [
     image: "/3D_PORTFOLIO.png",
     repo: "https://github.com/dachig/threejs-journey/tree/main/my-3d-portfolio",
     demo: "https://www.dachig.com/",
-    tech: ["R3F", "React", "Framer-Motion"],
+    tech: ["R3F", "React", "Framer-Motion","Gsap"],
   },
   {
     title: "Crypto Hippo (Database Deprecated)",

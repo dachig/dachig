@@ -16,7 +16,7 @@ export default function About() {
   return (
     <div
       id="about"
-      className="lg:w-screen lg:h-screen flex justify-center items-center"
+      className="lg:w-screen flex justify-center items-center"
     >
       <div className="flex-col flex gap-6 lg:gap-10">
         <h2 className="text-3xl text-primary-foreground !font-mono">

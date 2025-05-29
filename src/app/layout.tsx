@@ -19,6 +19,7 @@ export const metadata: Metadata = {
     "Scalable Web Apps",
     "Accessible Websites",
     "Next.js Developer",
+    "React Developer",
   ],
   authors: [
     {

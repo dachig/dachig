@@ -7,13 +7,15 @@ import Work from "@/components/work";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden flex flex-col lg:block gap-16 lg:gap-0">
+    <div className="overflow-x-hidden">
       <Navigation />
       <Hero />
-      <About />
-      <Experience />
-      <Work />
-      <Contact />
+      <div className="flex flex-col gap-16 lg:gap-60">
+        <About />
+        <Experience />
+        <Work />
+        <Contact />
+      </div>
     </div>
   );
 }

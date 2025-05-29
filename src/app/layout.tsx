@@ -4,7 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 export const metadata: Metadata = {
   title: "Dachi Giorgobiani Portfolio And Custom Website Development",
   description:
-    "I will help you develop and maintain a custom fullstack website which is accesible, scalable and easy to maintain. I work fast, reliable and guarantee fair pricing for my service.",
+    "Need a modern, scalable, and accessible website that is easy to maintain? Look no further and let me help you kickstart your brand's online presence. I will build you a fully custom website from scratch using the latest technology to ensure the highest quality in performance and SEO.",
   icons: {
     icon: "/DG.png",
     shortcut: "/DG.png",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Dachi Giorgobiani Portfolio and Custom Website Development",
     description:
-      "Scalable, accessible, and fast websites. Custom fullstack development with fair pricing. View my work.",
+      "Need a modern, scalable, and accessible website that is easy to maintain? Look no further and let me help you kickstart your brand's online presence. I will build you a fully custom website from scratch using the latest technology to ensure the highest quality in performance and SEO.",
     url: "https://dev-portfolio-kohl-three.vercel.app/",
     siteName: "Dachi Giorgobiani Portfolio",
     images: [

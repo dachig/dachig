@@ -9,20 +9,20 @@ export default function Hero() {
           <span className="!font-mono text-accent-foreground">
             Hi, my name is
           </span>
-          <h2 className="text-primary-foreground font-bold text-5xl">
+          <h1 className="text-primary-foreground font-bold text-5xl">
             Dachi Giorgobiani.
-          </h2>
+          </h1>
           <span className="text-secondary-foreground text-5xl">
             I build stuff for the web.
           </span>
           <span className=" text-secondary-foreground max-w-[500px]">
             I&apos;m a fullstack developer currently working as a freelancer,
             helping clients build fully custom, scalable, and easy to maintain
-            websites tailored to their needs. I specialize in delivering digital
+            websites tailored to their needs. I specialize in creating
             experiences that not only look great but also perform to a very high
             standard.
           </span>
-          <span className=" text-secondary-foreground max-w-[500px]">
+          <span className=" text-primary-foreground max-w-[500px]">
             Let me help you kickstart and elevate your brand&apos;s online
             presence!
           </span>

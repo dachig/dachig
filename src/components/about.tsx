@@ -27,6 +27,7 @@ export default function About() {
         <div className="flex flex-col lg:flex-row gap-6 lg:gap-12">
           <div className="border-2 border-accent-foreground w-[250px] h-[290px] lg:w-[300px] lg:h-[350px] rounded-md bg-card block self-center relative">
             <Image
+              title="portrait"
               src={"/pc_foto.jpg"}
               alt="portrait"
               width={300}
@@ -37,9 +38,9 @@ export default function About() {
           </div>
           <div className="flex flex-col gap-4 max-w-[500px] text-secondary-foreground">
             <span>
-              My interest in web development started back in 2022,
-              just before COVID ended. Who knew having a lot of spare time at
-              home could spark an interest in HTML & CSS!
+              My interest in web development started back in 2022, just before
+              COVID ended. Who knew having a lot of spare time at home could
+              spark an interest in HTML & CSS!
             </span>
             <span>
               Fast-forward to today, and I&apos;ve had the privilege to apply

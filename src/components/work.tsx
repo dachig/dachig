@@ -71,6 +71,7 @@ export default function Work() {
             <div key={idx}>
               {work.image && (
                 <Image
+                  title={work.title}
                   src={work.image}
                   alt={work.title}
                   width={200}

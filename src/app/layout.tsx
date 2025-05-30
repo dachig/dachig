@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Navigation from "@/components/navigation";
+import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
+import { AppSidebar } from "@/components/app-sidebar";
 export const metadata: Metadata = {
   title: "Dachi Giorgobiani Portfolio And Custom Website Development",
   description:
@@ -61,11 +63,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Analytics />
-      <body
-        className={`--font-sans bg-radial from-card to-background p-4 lg:p-0 overflow-x-hidden lg:h-screen w-full items-center flex-col flex gap-8 lg:gap-24  transition-all`}
-      >
-        <Navigation />
-        {children}
+      <body>
+        <SidebarProvider>
+          <AppSidebar />
+          <SidebarTrigger />
+          <main
+            className={`--font-sans bg-radial from-card to-background p-2 lg:p-0 overflow-x-hidden lg:h-screen w-full items-center flex-col flex gap-8 lg:gap-24 transition-all`}
+          >
+            <Navigation />
+            {children}
+          </main>
+        </SidebarProvider>
       </body>
     </html>
   );

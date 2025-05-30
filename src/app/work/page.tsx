@@ -97,7 +97,7 @@ export default function Work() {
         <div className="flex lg:flex-row flex-col gap-6 lg:w-5xl">
           <Carousel
             setApi={setApi}
-            className="w-fit h-fit lg:w-[520px] lg:h-[400px] flex flex-col"
+            className="w-fit h-fit mx-6 lg:mx-0 lg:w-[520px] lg:h-[400px] flex flex-col"
           >
             <CarouselContent>
               {workArray.map((work, idx) => (
@@ -126,7 +126,7 @@ export default function Work() {
           </Carousel>
           <Card className="hover:border-accent-foreground bg-transparent shadow-none flex-1">
             <CardHeader className="flex flex-col gap-6">
-              <CardTitle className="text-primary-foreground !font-mono text-4xl">
+              <CardTitle className="text-primary-foreground !font-mono text-2xl lg:text-4xl">
                 {workArray[current].title}
               </CardTitle>
               <div className="flex gap-2 flex-wrap">
@@ -139,7 +139,7 @@ export default function Work() {
                   </span>
                 ))}
               </div>{" "}
-              <CardDescription className="text-xl">
+              <CardDescription className="text-md lg:text-xl">
                 {workArray[current].description}
               </CardDescription>
             </CardHeader>

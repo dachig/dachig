@@ -51,9 +51,9 @@ export default function Contact() {
     <div id="contact" className="flex justify-center items-center ">
       <div
         ref={contentRef}
-        className="flex-col flex gap-6 lg:gap-10 w-full lg:w-3xl p-3 lg:p-6 bg-background/50 lg:mb-24 mb-8 rounded-md text-lg opacity-0"
+        className="flex-col flex gap-6 lg:gap-10 w-full lg:w-3xl p-3 lg:p-6 bg-background/50 lg:mb-24 mb-8 rounded-md txet-md lg:text-lg opacity-0"
       >
-        <h2 className="text-3xl text-primary-foreground !font-mono">
+        <h2 className="text-2xl lg:text-3xl text-primary-foreground !font-mono">
           Ready to work together?
         </h2>
         <div className="flex flex-col gap-4 text-secondary-foreground">

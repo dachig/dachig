@@ -68,7 +68,7 @@ export default function Experience() {
           <span className="text-accent-foreground text-xl mr-4">02.</span>
           My recent experiences
         </h1>
-        <div className="flex flex-col lg:flex-row gap-8 text-lg">
+        <div className="flex flex-col lg:flex-row gap-8 text-md lg:text-lg">
           <div className="flex flex-row lg:flex-col">
             {experiences.map((experience, idx) => (
               <div
@@ -98,13 +98,13 @@ export default function Experience() {
             ))}
           </div>
           <div className="flex flex-col mt-2">
-            <h2 className="text-primary-foreground text-2xl !font-mono">
+            <h2 className="text-primary-foreground text-xl lg:text-2xl !font-mono">
               {activeExperience.function}{" "}
               {activeExperience.location && (
                 <span className="text-accent-foreground !font-mono ml-2">{`@${activeExperience.location}`}</span>
               )}
             </h2>
-            <span className="text-secondary-foreground !font-mono text-[16px]">
+            <span className="text-secondary-foreground !font-mono text-md">
               {activeExperience.duration}
             </span>
             <div className="flex flex-col gap-3 mt-4">

@@ -41,11 +41,11 @@ export default function Services() {
       </h1>
       <div
         ref={contentRef}
-        className="grid items-center justify-center grid-cols-1 lg:grid-cols-2 text-lg opacity-0 max-w-5xl gap-8 lg:gap-24"
+        className="grid items-center justify-center grid-cols-1 lg:grid-cols-2 text-md lg:text-lg opacity-0 max-w-5xl gap-8 lg:gap-24"
       >
         {services.map((service, idx) => (
           <div key={idx} className="flex flex-col gap-4 lg:gap-8">
-            <h2 className="!font-mono text-accent-foreground text-3xl">
+            <h2 className="!font-mono text-accent-foreground text-2xl lg:text-3xl">
               {service.title}
             </h2>
             <span className="text-secondary-foreground">

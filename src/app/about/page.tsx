@@ -26,7 +26,7 @@ export default function About() {
     <div id="about" className=" flex justify-center items-center">
       <div
         ref={contentRef}
-        className="flex-col flex gap-6 lg:gap-10 text-lg mb-8 lg:mb-24 opacity-0"
+        className="flex-col flex gap-6 lg:gap-10 text-md lg:text-lg mb-8 lg:mb-24 opacity-0"
       >
         <h1 className="sr-only text-3xl text-primary-foreground !font-mono">
           <span className="text-accent-foreground text-xl mr-4">01.</span>

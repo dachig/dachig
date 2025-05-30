@@ -16,17 +16,17 @@ export default function Hero() {
     <div className="flex justify-center items-center">
       <div
         ref={contentRef}
-        className="flex items-center justify-center text-lg opacity-0"
+        className="flex items-center justify-center text-md lg:text-lg opacity-0"
       >
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-2 lg:gap-4">
           <span className="!font-mono text-accent-foreground">
             Hi, my name is
           </span>
-          <h1 className="text-primary-foreground font-bold text-5xl">
+          <h1 className="text-primary-foreground font-bold text-2xl lg:text-5xl">
             <Typewriter text="Daachi Giorgobiani."></Typewriter>
           </h1>
-          <span className="text-secondary-foreground text-5xl">
-            Ibuild stuff for the web.
+          <span className="text-secondary-foreground text-2xl lg:text-5xl">
+            I build stuff for the web.
           </span>
           <span className=" text-secondary-foreground max-w-[500px]">
             I&apos;m a fullstack developer currently working as a freelancer,

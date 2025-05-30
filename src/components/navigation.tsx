@@ -18,7 +18,7 @@ export default function Navigation() {
 
   return (
     <nav>
-      <ul className="list-none flex items-center p-4 gap-8 text-secondary-foreground lg:w-5xl flex-wrap text-lg">
+      <ul className="list-none  items-center p-4 gap-8 text-secondary-foreground lg:w-5xl flex-wrap text-lg hidden">
         <li className="mr-auto">
           <Link href="/">
             <Image

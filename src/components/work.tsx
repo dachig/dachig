@@ -7,12 +7,16 @@ import {
   CardHeader,
   CardTitle,
 } from "./ui/card";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
+import portfolio from "../../public/3D_PORTFOLIO.png";
+import cryptohippo from "../../public/crypto-hippo.png";
+import githubapi from "../../public/github-api.png";
+import marblesrace from "../../public/marbles-race-screen.png";
 
 interface WorkProps {
   title: string;
   description: string;
-  image?: string | undefined;
+  image?: StaticImageData | undefined;
   repo: string;
   demo: string;
   tech: string[];
@@ -21,16 +25,16 @@ const workArray: WorkProps[] = [
   {
     title: "3D Portfolio",
     description: "Personal portfolio made with React Three Fiber (R3F).",
-    image: "/3D_PORTFOLIO.png",
+    image: portfolio,
     repo: "https://github.com/dachig/threejs-journey/tree/main/my-3d-portfolio",
     demo: "https://www.dachig.com/",
-    tech: ["R3F", "React", "Framer-Motion","Gsap"],
+    tech: ["R3F", "React", "Framer-Motion", "Gsap"],
   },
   {
     title: "Crypto Hippo (Database Deprecated)",
     description:
       "Browse the latest crypto trends and track your favourite coins to stay up-to-date easily.",
-    image: "/crypto-hippo.png",
+    image: cryptohippo,
     repo: "https://github.com/dachig/CryptoHippo",
     demo: "https://crypto-hippo.vercel.app/",
     tech: ["React", "Supabase", "Next-Auth", "Crypto API"],
@@ -39,7 +43,7 @@ const workArray: WorkProps[] = [
     title: "Github API",
     description:
       "Discover public Github repositories by simply entering a username.",
-    image: "/github-api.png",
+    image: githubapi,
     repo: "https://github.com/dachig/GithubAPI",
     demo: "https://github-api-omega-lime.vercel.app/",
     tech: ["React", "Github API", "Zod"],
@@ -48,7 +52,7 @@ const workArray: WorkProps[] = [
     title: "Marbles Race",
     description:
       "Choose a difficulty and race to the finish whilst trying to dodge all the obstacles.",
-    image: "/marbles-race-screen.png",
+    image: marblesrace,
     repo: "https://github.com/dachig/threejs-journey/tree/main/66-create-a-game-with-r3f",
     demo: "https://marblesrace.vercel.app/",
     tech: ["R3F", "Three.JS", "JavaScript"],
@@ -57,10 +61,7 @@ const workArray: WorkProps[] = [
 
 export default function Work() {
   return (
-    <div
-      id="work"
-      className="lg:w-screen flex justify-center items-center"
-    >
+    <div id="work" className="lg:w-screen flex justify-center items-center">
       <div className="flex-col flex gap-6 lg:gap-10">
         <h2 className="text-3xl text-primary-foreground !font-mono">
           <span className="text-accent-foreground text-xl mr-4">03.</span>
@@ -71,6 +72,7 @@ export default function Work() {
             <div key={idx}>
               {work.image && (
                 <Image
+                  placeholder="blur"
                   title={work.title}
                   src={work.image}
                   alt={work.title}

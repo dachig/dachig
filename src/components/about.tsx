@@ -1,5 +1,6 @@
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import portrait from "../../public/pc_foto.jpg";
 
 const technologies: string[] = [
   "JavaScript (ES6+)",
@@ -14,10 +15,7 @@ const technologies: string[] = [
 ];
 export default function About() {
   return (
-    <div
-      id="about"
-      className="lg:w-screen flex justify-center items-center"
-    >
+    <div id="about" className="lg:w-screen flex justify-center items-center">
       <div className="flex-col flex gap-6 lg:gap-10">
         <h2 className="text-3xl text-primary-foreground !font-mono">
           <span className="text-accent-foreground text-xl mr-4">01.</span>
@@ -28,11 +26,12 @@ export default function About() {
           <div className="border-2 border-accent-foreground w-[250px] h-[290px] lg:w-[300px] lg:h-[350px] rounded-md bg-card block self-center relative">
             <Image
               title="portrait"
-              src={"/pc_foto.jpg"}
+              src={portrait}
               alt="portrait"
               width={300}
               height={350}
               className="h-full w-full absolute right-4 bottom-4 rounded-md"
+              placeholder="blur"
             />
             <div className="h-full w-full absolute right-4 bottom-4 rounded-md bg-accent-foreground/25" />
           </div>

@@ -26,8 +26,8 @@ export default function Hero() {
             Let me help you kickstart and elevate your brand&apos;s online
             presence!
           </span>
-          <a href="#contact" className="w-fit">
-            <Button>Let&apos;s get in touch!</Button>
+          <a href="/dachi-giorgobiani-cv.pdf" target="_blank">
+            <Button>Hire me CV</Button>
           </a>
           <div className="flex gap-4 items-center">
             <span className="text-secondary-foreground !font-mono">

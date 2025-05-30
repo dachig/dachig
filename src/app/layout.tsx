@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import Navigation from "@/components/navigation";
 export const metadata: Metadata = {
   title: "Dachi Giorgobiani Portfolio And Custom Website Development",
   description:
@@ -52,7 +53,6 @@ export const metadata: Metadata = {
   },
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -62,8 +62,9 @@ export default function RootLayout({
     <html lang="en">
       <Analytics />
       <body
-        className={`--font-sans bg-radial from-card to-background p-4 lg:p-0`}
+        className={`--font-sans bg-radial from-card to-background p-4 lg:p-0 overflow-x-hidden lg:h-screen w-full items-center flex-col flex gap-8 lg:gap-24  transition-all`}
       >
+        <Navigation />
         {children}
       </body>
     </html>

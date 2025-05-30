@@ -3,15 +3,19 @@ import nodemailer from "nodemailer";
 import { z } from "zod";
 
 const ContactSchema = z.object({
-  from: z.string().email(),
-  subject: z.string().nonempty(),
-  message: z.string().min(25),
+  firstName: z.string().nonempty("First name is required"),
+  lastName: z.string().nonempty("Last name is required"),
+  from: z.string().email("A valid email is required"),
+  subject: z.string().nonempty("Subject cannot be empty"),
+  message: z.string().min(25, "Message must be at least 25 characters"),
 });
 
 export async function POST(req: Request) {
   try {
     const json = await req.json();
-    const { from, subject, message } = ContactSchema.parse(json);
+
+    const { firstName, lastName, from, subject, message } =
+      ContactSchema.parse(json);
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -21,19 +25,20 @@ export async function POST(req: Request) {
         pass: process.env.SMTP_PASS,
       },
     });
-    const augmentedSubject = `${subject} (from: ${from})`;
+
+    const formattedFrom = `"${firstName} ${lastName}" <${from}>`;
+    const augmentedSubject = `${subject} (from: ${firstName} ${lastName})`;
 
     await transporter.sendMail({
-      from,
+      from: formattedFrom,
       to: process.env.MY_EMAIL,
       subject: augmentedSubject,
-      text: `Sender: ${from}\n\n${message}`,
+      text: `Sender Name: ${firstName} ${lastName}\nSender Email: ${from}\n\nMessage:\n${message}`,
     });
 
     return NextResponse.json({ success: true });
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
-    // Zod validation errors
     if (err.name === "ZodError") {
       return NextResponse.json(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -41,7 +46,6 @@ export async function POST(req: Request) {
         { status: 400 }
       );
     }
-    // Nodemailer or other errors
     console.error("Contact form error:", err);
     return NextResponse.json(
       { success: false, error: "Internal server error" },

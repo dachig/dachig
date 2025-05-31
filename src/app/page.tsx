@@ -13,7 +13,7 @@ export default function Hero() {
     gsap.to(contentRef.current, { opacity: 1, duration: 1 });
   }, []);
   return (
-    <div ref={contentRef} className="flex flex-col gap-2 lg:gap-4 opacity-0">
+    <div ref={contentRef} className="flex flex-col gap-4 lg:gap-6 opacity-0">
       <span className="!font-mono text-accent-foreground">Hi, my name is</span>
       <h1 className="text-primary-foreground font-bold text-3xl">
         <Typewriter text="Daachi Giorgobiani."></Typewriter>

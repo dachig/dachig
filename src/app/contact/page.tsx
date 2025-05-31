@@ -50,7 +50,7 @@ export default function Contact() {
   return (
       <div
         ref={contentRef}
-        className="flex-col flex gap-6 lg:gap-10 w-full lg:w-3xl p-3 lg:p-6 lg:bg-background/50 rounded-md self-start"
+        className="flex-col flex gap-6 lg:gap-10 w-full lg:w-3xl p-2 lg:p-6 lg:bg-background/50 rounded-md self-start"
       >
         <h2 className="text-2xl text-primary-foreground !font-mono">
           Ready to work together?

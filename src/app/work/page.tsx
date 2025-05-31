@@ -42,7 +42,7 @@ const workArray: WorkProps[] = [
     tech: ["R3F", "React", "Framer-Motion", "Gsap"],
   },
   {
-    title: "Crypto Hippo (Database Deprecated)",
+    title: "Crypto Hippo",
     description:
       "Browse the latest crypto trends and track your favourite coins to stay up-to-date easily.",
     image: cryptohippo,
@@ -92,7 +92,7 @@ export default function Work() {
       <h1 className="sr-only">Work that I&apos;m proud of</h1>
       <div
         ref={contentRef}
-        className="flex lg:flex-row flex-col gap-6 lg:w-5xl opacity-0"
+        className="flex lg:flex-row flex-col gap-4 lg:gap-2 lg:w-5xl opacity-0 self-start mt-4 lg:mt-0 lg:self-center"
       >
         <Carousel
           setApi={setApi}

@@ -63,7 +63,7 @@ export default function Experience() {
       <h1 className="sr-only">My recent experiences</h1>
       <div
         ref={contentRef}
-        className="flex flex-col lg:flex-row gap-8 opacity-0"
+        className="flex flex-col lg:flex-row gap-8 opacity-0 self-start mt-4 lg:mt-0 lg:self-center"
       >
         <div className="flex flex-row lg:flex-col">
           {experiences.map((experience, idx) => (

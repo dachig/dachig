@@ -68,7 +68,7 @@ export default function RootLayout({
           <AppSidebar />
           <SidebarTrigger />
           <main
-            className={`--font-sans bg-radial from-card to-background p-2 lg:p-0 overflow-x-hidden lg:h-screen w-full items-center flex-col flex gap-8 lg:gap-24 transition-all`}
+            className={`--font-sans bg-radial from-card to-background p-2 lg:p-4 overflow-x-hidden lg:h-screen w-full items-center justify-center flex`}
           >
             <Navigation />
             {children}

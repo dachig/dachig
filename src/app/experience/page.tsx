@@ -59,82 +59,77 @@ export default function Experience() {
     gsap.to(contentRef.current, { opacity: 1, duration: 1 });
   }, []);
   return (
-    <div id="experience" className=" flex justify-center items-center">
+    <>
+      <h1 className="sr-only">My recent experiences</h1>
       <div
         ref={contentRef}
-        className="flex-col flex gap-6 lg:gap-10 lg:mb-0 mb-8 opacity-0"
+        className="flex flex-col lg:flex-row gap-8 opacity-0"
       >
-        <h1 className="sr-only text-3xl text-primary-foreground !font-mono">
-          <span className="text-accent-foreground text-xl mr-4">02.</span>
-          My recent experiences
-        </h1>
-        <div className="flex flex-col lg:flex-row gap-8 text-md lg:text-lg">
-          <div className="flex flex-row lg:flex-col">
-            {experiences.map((experience, idx) => (
+        <div className="flex flex-row lg:flex-col">
+          {experiences.map((experience, idx) => (
+            <div
+              onClick={() => setActiveExperience(experience)}
+              key={idx}
+              className="flex flex-col lg:flex-row gap-4 items-center font-mono hover:cursor-pointer lg:flex-0 flex-1"
+            >
+              <span
+                className={cn(
+                  activeExperience === experience
+                    ? "border-accent-foreground"
+                    : "border-secondary-foreground",
+                  `border-b lg:border-r border-[1.5px] w-full lg:h-10 lg:w-0`
+                )}
+              ></span>
               <div
-                onClick={() => setActiveExperience(experience)}
-                key={idx}
-                className="flex flex-col lg:flex-row gap-4 items-center font-mono hover:cursor-pointer lg:flex-0 flex-1"
+                className={cn(
+                  activeExperience === experience
+                    ? "text-accent-foreground"
+                    : "text-secondary-foreground",
+                  `active:scale-[.97]`
+                )}
               >
-                <span
-                  className={cn(
-                    activeExperience === experience
-                      ? "border-accent-foreground"
-                      : "border-secondary-foreground",
-                    `border-b lg:border-r border-[1.5px] w-full lg:h-10 lg:w-0`
-                  )}
-                ></span>
-                <div
-                  className={cn(
-                    activeExperience === experience
-                      ? "text-accent-foreground"
-                      : "text-secondary-foreground",
-                    `active:scale-[.97]`
-                  )}
-                >
-                  {experience.title}
-                </div>
+                {experience.title}
               </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col mt-2">
+          <h2 className="text-primary-foreground !font-mono">
+            {activeExperience.function}{" "}
+            {activeExperience.location && (
+              <span className="text-accent-foreground !font-mono ml-2">{`@${activeExperience.location}`}</span>
+            )}
+          </h2>
+          <span className="text-secondary-foreground !font-mono text-sm">
+            {activeExperience.duration}
+          </span>
+          <div className="flex flex-col gap-3 mt-4">
+            {activeExperience.summary.map((bullet, idx) => (
+              <span
+                className="text-secondary-foreground flex items-center gap-4 max-w-[500px]"
+                key={idx}
+              >
+                <span className="text-accent-foreground">
+                  <ChevronRight size={16} />
+                </span>
+                {bullet}
+              </span>
             ))}
           </div>
-          <div className="flex flex-col mt-2">
-            <h2 className="text-primary-foreground text-xl lg:text-2xl !font-mono">
-              {activeExperience.function}{" "}
-              {activeExperience.location && (
-                <span className="text-accent-foreground !font-mono ml-2">{`@${activeExperience.location}`}</span>
-              )}
-            </h2>
-            <span className="text-secondary-foreground !font-mono text-md">
-              {activeExperience.duration}
-            </span>
-            <div className="flex flex-col gap-3 mt-4">
-              {activeExperience.summary.map((bullet, idx) => (
-                <span
-                  className="text-secondary-foreground flex items-center gap-4 max-w-[500px]"
-                  key={idx}
-                >
-                  <span className="text-accent-foreground">
-                    <ChevronRight size={16} />
-                  </span>
-                  {bullet}
-                </span>
-              ))}
-            </div>
-            {activeExperience.blog && (
-              <a
-                className="text-accent-foreground !font-mono flex gap-2 items-center mt-4"
-                href={activeExperience.blog}
-                target="_blank"
-              >
-                <Button>
-                  <ExternalLink size={16} />
-                  {activeExperience.title} Blog
-                </Button>
-              </a>
-            )}
-          </div>
+          {activeExperience.blog && (
+            <a
+              className="text-accent-foreground !font-mono flex gap-2 items-center mt-4"
+              href={activeExperience.blog}
+              target="_blank"
+            >
+              <Button>
+                <ExternalLink size={16} />
+                {activeExperience.title} Blog
+              </Button>
+            </a>
+          )}
         </div>
       </div>
-    </div>
+    </>
   );
 }

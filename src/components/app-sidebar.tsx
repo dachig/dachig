@@ -12,16 +12,14 @@ import {
   SidebarGroup,
   SidebarHeader,
 } from "@/components/ui/sidebar";
-
+const navLinks = [
+  { href: "/about", number: "01.", label: "About" },
+  { href: "/services", number: "02.", label: "Services" },
+  { href: "/experience", number: "03.", label: "Experience" },
+  { href: "/work", number: "04.", label: "Work" },
+];
 export function AppSidebar() {
   const pathname = usePathname();
-
-  const navLinks = [
-    { href: "/about", number: "01.", label: "About" },
-    { href: "/services", number: "02.", label: "Services" },
-    { href: "/experience", number: "03.", label: "Experience" },
-    { href: "/work", number: "04.", label: "Work" },
-  ];
 
   return (
     <Sidebar className="h-full ">
@@ -38,7 +36,7 @@ export function AppSidebar() {
               key={href}
               href={href}
               className={clsx(
-                "flex items-center gap-2 px-3 py-2 rounded-md text-lg transition-colors",
+                "flex items-center gap-2 px-3 py-2 rounded-md- transition-colors",
                 pathname === href
                   ? " text-accent-foreground"
                   : "text-secondary-foreground "
@@ -57,7 +55,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="px-4 py-4 text-sm text-muted-foreground">
+      <SidebarFooter className="px-4 py-4 text-xs text-muted-foreground">
         © {new Date().getFullYear()} Dachi Giorgobiani
       </SidebarFooter>
     </Sidebar>

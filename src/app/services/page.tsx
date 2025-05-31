@@ -35,13 +35,11 @@ export default function Services() {
     gsap.to(contentRef.current, { opacity: 1, duration: 1 });
   }, []);
   return (
-    <div className="flex justify-center items-center">
-      <h1 className="sr-only text-primary-foreground font-bold text-5xl">
-        My services
-      </h1>
+    <>
+      <h1 className="sr-only">My services</h1>
       <div
         ref={contentRef}
-        className="grid items-center justify-center grid-cols-1 lg:grid-cols-2 text-md lg:text-lg opacity-0 max-w-5xl gap-8 lg:gap-24"
+        className="grid items-center justify-center grid-cols-1 lg:grid-cols-2 opacity-0 max-w-5xl gap-8 lg:gap-24"
       >
         {services.map((service, idx) => (
           <div key={idx} className="flex flex-col gap-4 lg:gap-8">
@@ -57,6 +55,6 @@ export default function Services() {
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }

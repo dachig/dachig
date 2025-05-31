@@ -88,78 +88,76 @@ export default function Work() {
     });
   }, [api]);
   return (
-    <div id="work" className="flex justify-center items-center">
-      <div ref={contentRef} className="flex-col flex gap-6 lg:gap-10 opacity-0">
-        <h1 className="sr-only text-3xl text-primary-foreground !font-mono">
-          <span className="text-accent-foreground text-xl mr-4">03.</span>
-          Work that I&apos;m proud of
-        </h1>
-        <div className="flex lg:flex-row flex-col gap-6 lg:w-5xl">
-          <Carousel
-            setApi={setApi}
-            className="w-fit h-fit mx-6 lg:mx-0 lg:w-[520px] lg:h-[400px] flex flex-col"
-          >
-            <CarouselContent>
-              {workArray.map((work, idx) => (
-                <CarouselItem key={idx} className="flex gap-4">
-                  <Image
-                    title={work.title}
-                    src={work.image}
-                    alt={work.title}
-                    width={200}
-                    height={200}
-                    className="rounded-md rounded-b-none w-full h-auto lg:w-[520px] lg:h-[400px]"
-                  />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+    <>
+      <h1 className="sr-only">Work that I&apos;m proud of</h1>
+      <div
+        ref={contentRef}
+        className="flex lg:flex-row flex-col gap-6 lg:w-5xl opacity-0"
+      >
+        <Carousel
+          setApi={setApi}
+          className="w-fit h-fit mx-6 lg:mx-0 lg:w-[390px] lg:h-[300px] flex flex-col"
+        >
+          <CarouselContent>
+            {workArray.map((work, idx) => (
+              <CarouselItem key={idx} className="flex gap-4">
+                <Image
+                  title={work.title}
+                  src={work.image}
+                  alt={work.title}
+                  width={200}
+                  height={200}
+                  className="rounded-md w-full h-auto lg:w-full lg:h-full"
+                />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
 
-            <span className="!font-mono text-accent-foreground mt-3 mx-auto">
-              {current + 1}{" "}
-              <span className="!font-mono text-secondary-foreground">
-                of {workArray.length}
-              </span>
+          <span className="!font-mono text-accent-foreground mt-3 mx-auto">
+            {current + 1}{" "}
+            <span className="!font-mono text-secondary-foreground">
+              of {workArray.length}
             </span>
+          </span>
 
-            <CarouselPrevious className="z-50" />
-            <CarouselNext className="z-50" />
-          </Carousel>
-          <Card className="hover:border-accent-foreground bg-transparent shadow-none flex-1">
-            <CardHeader className="flex flex-col gap-6">
-              <CardTitle className="text-primary-foreground !font-mono text-2xl lg:text-4xl">
-                {workArray[current].title}
-              </CardTitle>
-              <div className="flex gap-2 flex-wrap">
-                {workArray[current].tech.map((tech, idx) => (
-                  <span
-                    className="text-sm px-2 rounded-md text-accent-foreground border-[1.5px] border-accent-foreground !font-mono"
-                    key={idx}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>{" "}
-              <CardDescription className="text-md lg:text-xl">
-                {workArray[current].description}
-              </CardDescription>
-            </CardHeader>
-            <CardFooter className="flex gap-2 mt-auto mb-6">
-              <a href={workArray[current].repo} target="_blank">
-                <Button className="text-lg active:scale-[.97] flex gap-2 items-center">
-                  <ExternalLink size={16} />
-                  Repository
-                </Button>
-              </a>
-              <a href={workArray[current].demo} target="_blank">
-                <Button className="text-lg active:scale-[.97] flex gap-2 items-center">
-                  <ExternalLink size={16} />
-                  Demo
-                </Button>
-              </a>
-            </CardFooter>
-          </Card>
-        </div>
+          <CarouselPrevious className="z-50" />
+          <CarouselNext className="z-50" />
+        </Carousel>
+        <Card className="hover:border-accent-foreground bg-transparent shadow-none flex-1">
+          <CardHeader className="flex flex-col gap-6">
+            <CardTitle className="text-primary-foreground !font-mono text-2xl">
+              {workArray[current].title}
+            </CardTitle>
+            <div className="flex gap-2 flex-wrap">
+              {workArray[current].tech.map((tech, idx) => (
+                <span
+                  className="text-xs px-2 rounded-md text-accent-foreground border-[1.5px] border-accent-foreground !font-mono"
+                  key={idx}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>{" "}
+            <CardDescription className="">
+              {workArray[current].description}
+            </CardDescription>
+          </CardHeader>
+          <CardFooter className="flex gap-2 mt-auto mb-6">
+            <a href={workArray[current].repo} target="_blank">
+              <Button className="active:scale-[.97] flex gap-2 items-center">
+                <ExternalLink size={16} />
+                Repository
+              </Button>
+            </a>
+            <a href={workArray[current].demo} target="_blank">
+              <Button className="active:scale-[.97] flex gap-2 items-center">
+                <ExternalLink size={16} />
+                Demo
+              </Button>
+            </a>
+          </CardFooter>
+        </Card>
       </div>
-    </div>
+    </>
   );
 }

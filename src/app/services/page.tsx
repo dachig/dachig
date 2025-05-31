@@ -34,6 +34,19 @@ export default function Services() {
 
   useEffect(() => {
     gsap.to(contentRef.current, { opacity: 1, duration: 1 });
+    gsap.fromTo(
+      ".service-item",
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power2.out",
+        // delay the first item by 0.5s and stagger each next by 0.5s
+        delay: 0.75,
+        stagger: 0.25,
+      }
+    );
   }, []);
   return (
     <>
@@ -47,24 +60,18 @@ export default function Services() {
             key={idx}
             className={cn(
               idx == 0 &&
-                "lg:border-l-none lg:border-t-none lg:border-b lg:border-r border-secondary-foreground",
-              idx == 1 &&
-                "lg:border-r-none lg:border-t-none lg:border-b lg:border-l-none border-secondary-foreground",
-              idx == 2 &&
-                "lg:border-l-none lg:border-t-none lg:border-b-none lg:border-r border-secondary-foreground",
-              idx == 3 && "lg:border-none",
+                "lg:border-l-none lg:border-t-none lg:border-b-[1.5px] lg:border-r-[1.5px] border-secondary-foreground",
+              idx == 1 && "lg:border-b-[1.5px] border-secondary-foreground",
+              idx == 2 && "lg:border-r-[1.5px] border-secondary-foreground",
               "flex flex-col gap-4 lg:gap-8  lg:p-8 w-full h-full"
             )}
           >
-            <h2 className="!font-mono text-accent-foreground text-2xl lg:text-3xl">
+            <h2 className="service-item !font-mono text-accent-foreground text-2xl">
               {service.title}
             </h2>
-            <span className="text-secondary-foreground">
+            <span className="service-item text-secondary-foreground">
               {service.description}
             </span>
-            {/* {idx == 0 || idx == 1 ? (
-              <div className="w-full border-b border-secondary-foreground lg:-mb-16 hidden lg:block" />
-            ) : null} */}
           </div>
         ))}
       </div>

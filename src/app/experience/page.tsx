@@ -54,21 +54,51 @@ const experiences: ExperiencesProps[] = [
 export default function Experience() {
   const [activeExperience, setActiveExperience] = useState(experiences[0]);
   const contentRef = useRef(null);
+  const detailsRef = useRef(null);
 
   useEffect(() => {
-    gsap.to(contentRef.current, { opacity: 1, duration: 1 });
+    if (contentRef.current) {
+      gsap.to(contentRef.current, {
+        opacity: 1,
+        duration: 0.8,
+        ease: "power2.out",
+      });
+    }
   }, []);
+
+  function handleClick(newExp: ExperiencesProps) {
+    if (newExp === activeExperience) return;
+
+    if (detailsRef.current) {
+      gsap.to(detailsRef.current, {
+        opacity: 0,
+        duration: 0.4,
+        ease: "power2.inOut",
+        onComplete: () => {
+          setActiveExperience(newExp);
+
+          gsap.fromTo(
+            detailsRef.current,
+            { opacity: 0, x: 20 },
+            { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }
+          );
+        },
+      });
+    } else {
+      setActiveExperience(newExp);
+    }
+  }
   return (
     <>
       <h1 className="sr-only">My recent experiences</h1>
       <div
         ref={contentRef}
-        className="flex flex-col lg:flex-row gap-8 opacity-0 self-start mt-4 lg:mt-0 lg:self-center"
+        className="flex flex-col lg:flex-row gap-4 lg:gap-8 opacity-0 self-start mt-4 lg:mt-0 lg:self-center h-fit"
       >
         <div className="flex flex-row lg:flex-col">
           {experiences.map((experience, idx) => (
             <div
-              onClick={() => setActiveExperience(experience)}
+              onClick={() => handleClick(experience)}
               key={idx}
               className="flex flex-col lg:flex-row gap-4 items-center !font-mono hover:cursor-pointer lg:flex-0 flex-1"
             >
@@ -93,7 +123,7 @@ export default function Experience() {
             </div>
           ))}
         </div>
-        <div className="flex flex-col mt-2">
+        <div ref={detailsRef} className="flex flex-col">
           <h2 className="text-primary-foreground !font-mono">
             {activeExperience.function}{" "}
             {activeExperience.location && (

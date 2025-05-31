@@ -74,19 +74,52 @@ export default function Work() {
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
   const contentRef = useRef(null);
+  const detailsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    gsap.to(contentRef.current, { opacity: 1, duration: 1 });
+    if (contentRef.current) {
+      gsap.to(contentRef.current, {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+      });
+    }
   }, []);
 
   useEffect(() => {
-    if (!api) {
-      return;
-    }
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap());
-    });
-  }, [api]);
+    if (!api) return;
+
+    const handleSelect = () => {
+      const newIndex = api.selectedScrollSnap();
+
+      if (newIndex === current) return;
+
+      if (detailsRef.current) {
+        gsap.to(detailsRef.current, {
+          opacity: 0,
+          duration: 0.4,
+          ease: "power2.inOut",
+          onComplete: () => {
+            setCurrent(newIndex);
+
+            gsap.fromTo(
+              detailsRef.current,
+              { opacity: 0, x: 20 },
+              { opacity: 1, x: 0, duration: 0.4, ease: "power2.out" }
+            );
+          },
+        });
+      } else {
+        setCurrent(newIndex);
+      }
+    };
+
+    api.on("select", handleSelect);
+    return () => {
+      api.off("select", handleSelect);
+    };
+  }, [api, current]);
+
   return (
     <>
       <h1 className="sr-only">Work that I&apos;m proud of</h1>
@@ -96,7 +129,7 @@ export default function Work() {
       >
         <Carousel
           setApi={setApi}
-          className="w-fit h-fit mx-6 lg:mx-0 lg:w-[390px] lg:h-[300px] flex flex-col"
+          className="w-fit h-fit mx-1 lg:mx-0 lg:w-[390px] lg:h-[300px] flex flex-col bg-background pb-2 rounded-md"
         >
           <CarouselContent>
             {workArray.map((work, idx) => (
@@ -107,7 +140,7 @@ export default function Work() {
                   alt={work.title}
                   width={200}
                   height={200}
-                  className="rounded-md w-full h-auto lg:w-full lg:h-full"
+                  className="rounded-md rounded-b-none w-full h-auto lg:w-full lg:h-full"
                 />
               </CarouselItem>
             ))}
@@ -123,7 +156,10 @@ export default function Work() {
           <CarouselPrevious className="z-50" />
           <CarouselNext className="z-50" />
         </Carousel>
-        <Card className="hover:border-accent-foreground bg-transparent shadow-none flex-1">
+        <Card
+          ref={detailsRef}
+          className="hover:border-accent-foreground bg-transparent shadow-none flex-1"
+        >
           <CardHeader className="flex flex-col gap-6">
             <CardTitle className="text-primary-foreground !font-mono text-2xl">
               {workArray[current].title}

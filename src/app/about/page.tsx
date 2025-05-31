@@ -29,7 +29,7 @@ export default function About() {
         ref={contentRef}
         className="flex flex-col lg:flex-row gap-6 lg:gap-10 opacity-0"
       >
-        <div className="border-2 border-accent-foreground w-[250px] h-[290px] rounded-md bg-card block self-center relative">
+        <div className="border-2 border-accent-foreground w-[250px] h-[290px] rounded-md bg-card block self-center relative mt-4 lg:mt-0">
           <Image
             title="portrait"
             src={portrait}

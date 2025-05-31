@@ -42,8 +42,8 @@ export function AppSidebar() {
                   : "text-secondary-foreground "
               )}
             >
-              <span className="font-mono text-accent-foreground">{number}</span>
-              <span className="font-mono">{label}</span>
+              <span className="!font-mono text-accent-foreground">{number}</span>
+              <span className="!font-mono">{label}</span>
             </Link>
           ))}
         </SidebarGroup>

@@ -9,7 +9,7 @@ const technologies: string[] = [
   "JavaScript (ES6+)",
   "TypeScript",
   "React",
-  "React Three Fiber (R3F)",
+  "React Three Fiber",
   "Three.JS",
   "GraphQL",
   "MongoDB",
@@ -27,9 +27,9 @@ export default function About() {
       <h1 className="sr-only ">About me</h1>
       <div
         ref={contentRef}
-        className="flex flex-col lg:flex-row gap-6 lg:gap-10 opacity-0"
+        className="flex flex-col lg:flex-row gap-4 opacity-0"
       >
-        <div className="border-2 border-accent-foreground w-[250px] h-[290px] rounded-md bg-card block self-center relative mt-4 lg:mt-0">
+        <div className="border-2 border-accent-foreground lg:w-[220px] lg:h-[260px] w-[250px] h-[290px] self-center lg:self-start rounded-md bg-card block relative mt-4 lg:mt-5">
           <Image
             title="portrait"
             src={portrait}
@@ -41,7 +41,7 @@ export default function About() {
           />
           <div className="h-full w-full absolute right-4 bottom-4 rounded-md bg-accent-foreground/25" />
         </div>
-        <div className="flex flex-col gap-4 max-w-[500px] text-secondary-foreground">
+        <div className="flex flex-col gap-4 max-w-[400px] text-secondary-foreground">
           <h2 className="sr-only">Description</h2>
           <span>
             My interest in web development started back in 2022, just before
@@ -74,7 +74,7 @@ export default function About() {
           <span>Here are a few technologies I use on a regular basis:</span>
           <div className="grid grid-cols-2 auto-rows-min">
             {technologies.map((technology, idx) => (
-              <span key={idx} className="flex gap-4 items-center">
+              <span key={idx} className="flex gap-4 items-center  !font-mono">
                 <span className="text-accent-foreground">
                   <ChevronRight size={16} />
                 </span>

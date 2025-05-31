@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import { useEffect, useRef } from "react";
 interface ServicesProps {
@@ -39,19 +40,31 @@ export default function Services() {
       <h1 className="sr-only">My services</h1>
       <div
         ref={contentRef}
-        className="grid items-center justify-center grid-cols-1 lg:grid-cols-2 opacity-0 max-w-5xl gap-8 lg:gap-24"
+        className="grid items-center justify-center grid-cols-1 lg:grid-cols-2 opacity-0 max-w-5xl gap-8 lg:gap-0"
       >
         {services.map((service, idx) => (
-          <div key={idx} className="flex flex-col gap-4 lg:gap-8">
+          <div
+            key={idx}
+            className={cn(
+              idx == 0 &&
+                "lg:border-l-none lg:border-t-none lg:border-b lg:border-r border-secondary-foreground",
+              idx == 1 &&
+                "lg:border-r-none lg:border-t-none lg:border-b lg:border-l-none border-secondary-foreground",
+              idx == 2 &&
+                "lg:border-l-none lg:border-t-none lg:border-b-none lg:border-r border-secondary-foreground",
+              idx == 3 && "lg:border-none",
+              "flex flex-col gap-4 lg:gap-8  lg:p-8 w-full h-full"
+            )}
+          >
             <h2 className="!font-mono text-accent-foreground text-2xl lg:text-3xl">
               {service.title}
             </h2>
             <span className="text-secondary-foreground">
               {service.description}
             </span>
-            {idx == 0 || idx == 1 ? (
+            {/* {idx == 0 || idx == 1 ? (
               <div className="w-full border-b border-secondary-foreground lg:-mb-16 hidden lg:block" />
-            ) : null}
+            ) : null} */}
           </div>
         ))}
       </div>

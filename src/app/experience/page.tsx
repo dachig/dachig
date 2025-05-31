@@ -70,7 +70,7 @@ export default function Experience() {
             <div
               onClick={() => setActiveExperience(experience)}
               key={idx}
-              className="flex flex-col lg:flex-row gap-4 items-center font-mono hover:cursor-pointer lg:flex-0 flex-1"
+              className="flex flex-col lg:flex-row gap-4 items-center !font-mono hover:cursor-pointer lg:flex-0 flex-1"
             >
               <span
                 className={cn(

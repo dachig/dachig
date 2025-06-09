@@ -36,7 +36,7 @@ export function AppSidebar() {
               key={href}
               href={href}
               className={clsx(
-                "flex items-center gap-2 px-3 py-2 rounded-md- transition-colors",
+                "flex items-center gap-2 px-3 py-2 rounded-md- transition-colors w-fit",
                 pathname === href
                   ? " text-accent-foreground"
                   : "text-secondary-foreground "

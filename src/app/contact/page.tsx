@@ -4,6 +4,7 @@ import { Button } from "../../components/ui/button";
 import gsap from "gsap";
 
 export default function Contact() {
+  const contentRef = useRef(null);
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -15,11 +16,11 @@ export default function Contact() {
     "idle" | "submitting" | "success" | "error"
   >("idle");
   const [errors, setErrors] = useState<string[]>([]);
-  const contentRef = useRef(null);
 
   useEffect(() => {
     gsap.to(contentRef.current, { opacity: 1, duration: 1 });
   }, []);
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("submitting");
@@ -50,7 +51,7 @@ export default function Contact() {
   return (
     <div
       ref={contentRef}
-      className="flex-col flex gap-6 lg:gap-10 w-full lg:w-3xl p-2 lg:p-6 lg:bg-background/50 rounded-md self-start"
+      className="flex-col flex gap-6 lg:gap-10 w-full lg:w-3xl p-2 lg:p-6 lg:bg-background/50 rounded-md self-start opacity-0"
     >
       <h2 className="text-2xl text-primary-foreground !font-mono">
         Ready to work together?
